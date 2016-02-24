@@ -1,0 +1,30 @@
+{
+  "name": "salti-admin",
+  "version": "0.1.1",
+  "description": "Simple Admin Authentication for Thali IoT",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cicorias/salti-admin.git"
+  },
+  "keywords": [
+    "thali",
+    "thaliproject",
+    "pouchdb"
+  ],
+  "author": "shawn cicoria",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cicorias/salti-admin/issues"
+  },
+  "homepage": "https://github.com/cicorias/salti-admin#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "debug": "~2.2.0",
+    "express": "^4.13.4",
+    "supertest": "^1.2.0"
+  }
+}

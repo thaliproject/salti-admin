@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap-theme.min.css">
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body ng-app="myApp">
+  <div class="container">
+    <h1><%= title %></h1>
+    <div ng-controller="ValidateController">
+      <h3 ng-bind="greeting"></h3>
+
+      <form>
+        <div class="form-group">
+          <label for="secret">Current Secret</label>
+          <input type="text" class="form-control" id="secret"  ng-model="secret">
+        </div>
+        <div class="form-group">
+          <label for="newdoc">New Document</label>
+          <input type="text" class="form-control" id="newdoc" readonly ng-model="newdoc">
+        </div>
+
+        <div>
+          <button class="btn btn-default" ng-click="getSecret();">Get Secret (CORS)</button>
+        </div>
+        <div>
+          <button class="btn btn-default" ng-click="createDoc();">Create Document</button>
+        </div>
+                <div>
+          <div class="alert alert-success" role="alert">{{ messages }}</div>
+          <div class="alert alert-danger" role="alert">{{errors}}</div>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+  <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="/node_modules/angular/angular.js"></script>
+  <script src="/app/validate.js"></script>
+</body>
+
+</html>
