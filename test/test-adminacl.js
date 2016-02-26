@@ -121,5 +121,88 @@ describe('basic authn tests', function () {
 
   })
 
+  describe('crypto authn tests - caller lacks CLEAR in header', function () {
+
+    before(function () {
+      adminAcl.setSecret('foobar');
+    })
+
+    describe('simple Authn with binary call', function () {
+      it('respond with an 401 - unauthorized', function (done) {
+        request(app)
+          .post('/')
+          .set('Authorization', 'foobar')
+          .set('Accept', 'application/json')
+          .expect('Content-Type', /json/)
+          .expect(401, done);
+      })
+    })
+
+
+    describe('simple Authn with binary call', function () {
+      it('respond with an 401 - unauthorized', function (done) {
+        request(app)
+          .post('/')
+          .set('Authorization', 'foobar')
+          .set('Accept', 'application/json')
+          .expect('Content-Type', /json/)
+          .expect(401, done);
+      })
+    })
+
+  })
+
+  describe('some tests with a req.body', function () {
+
+    var secret = 'truk653Dimohr/0D7IDuPg==THISDOESNTMATTER';
+
+    before(function () {
+      adminAcl.setSecret(secret);
+    })
+
+    it('should reject as invalid header', function (done) {
+      request(app)
+        .post('/')
+        .send({ name: 'Manny', species: 'cat' })
+        .set('Authorization', 'foobar')
+        .set('Accept', 'application/json')
+        .expect('Content-Type', /json/)
+        .expect(401, done);
+    })
+
+
+    it('should reject as invalid header', function (done) {
+      request(app)
+        .get('/')
+        .send({ name: 'Manny', species: 'cat' })
+        .set('Authorization', 'foobar')
+        .set('Accept', 'application/json')
+        .expect('Content-Type', /json/)
+        .expect(401, done);
+    })
+
+    it('should OK as valid header', function (done) {
+      request(app)
+        .post('/')
+        .send({ name: 'Manny', species: 'cat' })
+        .set('Authorization', 'CLEAR ' + secret)
+        .set('Accept', 'application/json')
+        .expect('Content-Type', /json/)
+        .expect(200, done);
+    })
+
+
+    it('should OK as valid header', function (done) {
+      request(app)
+        .get('/')
+        .send({ name: 'Manny', species: 'cat' })
+        .set('Authorization', 'CLEAR ' + secret)
+        .set('Accept', 'application/json')
+        .expect('Content-Type', /json/)
+        .expect(200, done);
+    })
+
+
+  })
 
 })

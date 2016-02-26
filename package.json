@@ -1,6 +1,6 @@
 {
   "name": "salti-admin",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Simple Admin Authentication for Thali IoT",
   "main": "lib/index.js",
   "scripts": {
