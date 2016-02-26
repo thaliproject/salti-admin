@@ -1,10 +1,11 @@
 {
   "name": "salti-admin",
-  "version": "0.1.2",
+  "version": "0.1.6",
   "description": "Simple Admin Authentication for Thali IoT",
   "main": "lib/index.js",
   "scripts": {
-    "test": "node ./node_modules/mocha/bin/mocha"
+    "test": "node ./node_modules/mocha/bin/mocha",
+    "test-travis": "./node_modules/istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha -- -R spec ./test/*"
   },
   "repository": {
     "type": "git",
@@ -26,7 +27,9 @@
     "secure-compare": "^3.0.1"
   },
   "devDependencies": {
+    "coveralls": "^2.11.8",
     "express": "^4.13.4",
+    "istanbul": "^0.4.2",
     "jshint": "^2.9.1",
     "mocha": "^2.4.5",
     "mocha-jshint": "^2.3.1",

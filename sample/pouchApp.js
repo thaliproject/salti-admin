@@ -10,7 +10,7 @@ var adminAcl = require(path.join(__dirname, '../lib/index'));
 
 
 var pouchOptions = {
-  mode: 'fullCouchDB'
+  mode: 'minimumForPouchDB' //'fullCouchDB' //minimumForPouchDB
 };
 
 app.get('/admin/getsecret', function (req, res, next) {
@@ -45,13 +45,11 @@ adminAcl.generateSecret(function (err, secret) {
   console.log('');
   console.log('***************************************');
 
-  adminAcl.setSecret(secret);
-  
   //also setting this in the App - see above for the API route
   app.set('secret', secret);
   
   //inject our middleware.. - needs to be BEFORE the express-pouchdb app setup.
-  app.use(adminAcl.isAdminOk);
+  app.use(adminAcl.acl({ secret : secret }));
 
   app.use('/', require('express-pouchdb')(PouchDB, pouchOptions));
  
