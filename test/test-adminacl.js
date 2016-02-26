@@ -50,7 +50,7 @@ describe('basic authn tests', function () {
 
   describe('with simple Authorization header no clear', function () {
     describe('GET / ', function () {
-      it('respond with an OK - 200', function (done) {
+      it('respond with an 401', function (done) {
         request(app)
           .get('/')
           .set('Authorization', 'foobar')
@@ -61,7 +61,7 @@ describe('basic authn tests', function () {
     })
 
     describe('POST / ', function () {
-      it('respond with an OK - 200', function (done) {
+      it('respond with a 401', function (done) {
         request(app)
           .post('/')
           .set('Authorization', 'foobar')
@@ -85,7 +85,7 @@ describe('basic authn tests', function () {
     })
 
     describe('POST / ', function () {
-      it('respond with an access denied - 401', function (done) {
+      it('respond with a - 401', function (done) {
         request(app)
           .post('/')
           .set('Authorization', 'Foobarz')
@@ -98,7 +98,7 @@ describe('basic authn tests', function () {
 
   describe('with CLEAR in Authorization header', function () {
     describe('GET / ', function () {
-      it('respond with an access denied - 401', function (done) {
+      it('respond with an OK - 200', function (done) {
         request(app)
           .get('/')
           .set('authorization', 'CLEAR foobar')
@@ -109,7 +109,7 @@ describe('basic authn tests', function () {
     })
 
     describe('POST / ', function () {
-      it('respond with an access denied - 401', function (done) {
+      it('respond with an OK - 200', function (done) {
         request(app)
           .post('/')
           .set('authorization', 'CLEAR foobar')

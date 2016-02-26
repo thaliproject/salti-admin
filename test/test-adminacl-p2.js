@@ -1,8 +1,10 @@
 'use strict';
+/* this is just split into 2 for size of file reasons*/
 
 var request = require('supertest'),
   express = require('express'),
-  path = require('path');
+  path = require('path'),
+  compare = require('secure-compare');
 
 var app = express();
 
@@ -40,7 +42,7 @@ describe('crypto authn tests', function () {
   describe('simple Authn with binary call', function(){
       it('respond with an 401 - unauthorized', function (done) {
         request(app)
-          .get('/')
+          .post('/')
           .set('Authorization', 'foobar')
           .set('Accept', 'application/json')
           .expect('Content-Type', /json/)
@@ -49,4 +51,5 @@ describe('crypto authn tests', function () {
   })
 
 })
+  
   

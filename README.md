@@ -1,4 +1,5 @@
 # SALTI-Admin
+![](https://travis-ci.org/thaliproject/salti-admin.svg?branch=master)
 ## Simple Authentication/Authentication Library for Thali IoT
 Provides a simple Express Middleware implementation that checks a simple Authorization header.
 
@@ -49,8 +50,6 @@ For example, here we're setting the PouchDB client options.
 
 The `secret` is the same from above with the word `CLEAR` as a prefix
 
-
-
 ```js
   pouchDbOptions.ajax.headers = {
     'User-Agent': 'request',
@@ -85,7 +84,6 @@ node ./server.js
 
 
 ```
-
 ## Running Tests
 You first should have mocha installed.
 
@@ -114,3 +112,4 @@ PouchDB / Fauxton site: [http://localhost:3002](http://localhost:3002)
 
 ## Validation Page.
 
+Validation page demonstrates the creation of a document - check the code for the calling patter.
