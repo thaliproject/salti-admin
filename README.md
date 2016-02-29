@@ -1,5 +1,9 @@
 # SALTI-Admin
-![](https://travis-ci.org/thaliproject/salti-admin.svg?branch=master)
+![Build Status](https://travis-ci.org/thaliproject/salti-admin.svg?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/thaliproject/salti-admin/badge.svg?branch=master)](https://coveralls.io/github/thaliproject/salti-admin?branch=master)
+
+
+
 ## Simple Authentication/Authentication Library for Thali IoT
 Provides a simple Express Middleware implementation that checks a simple Authorization header.
 
@@ -112,4 +116,10 @@ PouchDB / Fauxton site: [http://localhost:3002](http://localhost:3002)
 
 ## Validation Page.
 
-Validation page demonstrates the creation of a document - check the code for the calling patter.
+Validation page demonstrates the creation of a document - check the code for the calling pattern.
+
+The field that shows the current secret it set automatcially at startup.
+
+Try a few "create docs" and you should see the response in the green box.
+
+Then, change the key to something else - then again try to create docs - at this point you should see messages on each failure in the red box.
