@@ -1,5 +1,5 @@
 # SALTI-Admin
-![Build Status](https://travis-ci.org/thaliproject/salti-admin.svg?branch=master)
+[![Build Status](https://travis-ci.org/thaliproject/salti-admin.svg?branch=master)](https://travis-ci.org/thaliproject/salti-admin)
 [![Coverage Status](https://coveralls.io/repos/github/thaliproject/salti-admin/badge.svg?branch=master)](https://coveralls.io/github/thaliproject/salti-admin?branch=master)
 
 
