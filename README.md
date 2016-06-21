@@ -123,3 +123,6 @@ The field that shows the current secret it set automatcially at startup.
 Try a few "create docs" and you should see the response in the green box.
 
 Then, change the key to something else - then again try to create docs - at this point you should see messages on each failure in the red box.
+
+## Code of Conduct
+This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
